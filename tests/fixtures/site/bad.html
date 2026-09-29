@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bad forms</title>
+<style>
+  .hp { position: absolute; left: -9999px; }
+  .tiny { width: 16px; height: 16px; padding: 0; }
+</style>
+</head>
+<body>
+<form id="contact" method="get" action="/send" autocomplete="off">
+  <input type="text" name="email" id="email" placeholder="Email">
+  <label for="phone">Phone *</label>
+  <input type="text" id="phone" name="phone" aria-describedby="phone-help">
+  <label>Company <input type="text" name="company" autocomplete="company-name"></label>
+  <input type="text" name="website" class="hp">
+  <label for="nowhere">Ghost</label>
+  <input type="number" name="postal" id="postal" aria-label="Postal code" autocomplete="postal-code">
+  <input type="text" name="fullname" id="fullname" aria-invalid="true" title="Full name">
+  <span id="fullname-error">Please enter your name</span>
+  <input type="file" name="cv" aria-label="CV">
+  <input type="radio" name="plan" value="a" aria-label="A">
+  <input type="radio" name="plan" value="b" aria-label="B">
+  <button type="button" class="tiny" onclick="void 0"></button>
+  <input type="hidden" name="_token" value="abc123abc123abc123abc123abc123ab">
+</form>
+
+<form id="login" method="get" action="http://insecure.example/login">
+  <label for="user">Username</label>
+  <input id="user" name="user">
+  <label for="pw">Password</label>
+  <input type="password" id="pw" name="pw" maxlength="16" onpaste="return false">
+  <button type="submit"><svg aria-hidden="true" width="10" height="10"></svg></button>
+</form>
+
+<input type="search" name="q" form="missing-form" aria-label="Search">
+</body>
+</html>

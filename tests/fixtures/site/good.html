@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Good form</title>
+<style>
+  input, button { min-height: 32px; font-size: 16px; }
+  .hp { display: none; }
+</style>
+</head>
+<body>
+<form id="signup" method="post" action="/signup">
+  <label for="name">Name</label>
+  <input id="name" name="name" autocomplete="name" required>
+  <label for="email">Email</label>
+  <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
+  <p id="email-error" hidden>Enter an email like name@example.com</p>
+  <label for="new-pw">Password</label>
+  <input id="new-pw" name="password" type="password" autocomplete="new-password" required>
+  <div class="hp"><input type="text" name="hp_field" tabindex="-1" autocomplete="off"></div>
+  <input type="hidden" name="csrfmiddlewaretoken" value="x9f8e7d6c5b4a3x9f8e7d6c5b4a3">
+  <button type="submit">Create account</button>
+</form>
+</body>
+</html>
